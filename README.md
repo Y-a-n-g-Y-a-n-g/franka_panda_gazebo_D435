@@ -67,8 +67,8 @@ This repository is modified based on the following repository
 - Fixed the problem that the color of the point cloud was incorrect.[issue](https://github.com/pal-robotics/realsense_gazebo_plugin/issues/31)
 
 # License
-To use this repository, please refer to the license of the reference repository
+- To use this repository, please refer to the license of the reference repository
 
 # More
-If you have usage problems, please open an issue.
-If you benefit from this repository, please star us. Thank you for your support.
+- If you have usage problems, please open an issue.
+- If you benefit from this repository, please star us. Thank you for your support.
