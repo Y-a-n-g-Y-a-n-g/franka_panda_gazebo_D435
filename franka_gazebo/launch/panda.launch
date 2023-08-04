@@ -64,18 +64,6 @@
               $(arg initial_joint_positions)
               "/>
 
-  <!--定义一个名为"$(arg arm_id)_gripper_spawner"的节点。这个节点使用了"controller_manager"包中的"spawner"类型来执行指定的命令-->
-  <!-- Spawn required ROS controllers -->
- <!--
-  <node pkg="controller_manager"
-        type="spawner"
-        name="$(arg arm_id)_gripper_spawner"
-        if="$(arg use_gripper)"
-        args="franka_gripper"
-        respawn="false"
-  />
--->
-
   <!-- spawns the controller after the robot was put into its initial joint pose -->
   <node pkg="controller_manager"
         output="log"
