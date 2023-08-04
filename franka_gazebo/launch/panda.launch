@@ -112,7 +112,6 @@
 
 
   <!-- Start only if cartesian_impedance_example_controller -->
-  <!--创建一个交互式标记节点，并设置一些参数和重映射-->
   <node name="interactive_marker"
         pkg="franka_example_controllers"
         type="interactive_marker.py"
