@@ -24,7 +24,7 @@ mkdir -p catkin_ws/src&&cd catkin_ws&&source /opt/ros/noetic/setup.sh&&catkin_in
 ```
 ## 4. Clone this repository
 ```
-https://github.com/Yang-GG/franka_panda_gazebo_D435.git
+git clone https://github.com/Yang-GG/franka_panda_gazebo_D435.git
 ```
 ## 5.compile this package
 ```
