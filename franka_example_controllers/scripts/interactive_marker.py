@@ -11,7 +11,7 @@ import math
 marker_pose = PoseStamped()
 pose_pub = None
 position_limits = [[-0.6, 0.6], [-0.6, 0.6], [0.05, 0.9]]
-SafeWorkspace=[[0.1, 0.6], [-0.5, 0.5], [0.1, 0.6]]
+SafeWorkspace=[[-0.2, 0.7], [-0.6, 0.6], [0.05, 0.7]]
 startpose=[0.3,0,0.5,1,0,0,0]
 nowpose=None
 stepxyz=0.01

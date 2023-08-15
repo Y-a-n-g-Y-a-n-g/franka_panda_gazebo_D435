@@ -6,8 +6,7 @@ import rospy as ros
 from actionlib import SimpleActionClient
 from sensor_msgs.msg import JointState
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
-from control_msgs.msg import FollowJointTrajectoryAction, \
-                             FollowJointTrajectoryGoal, FollowJointTrajectoryResult
+from control_msgs.msg import FollowJointTrajectoryAction, FollowJointTrajectoryGoal, FollowJointTrajectoryResult
 
 ros.init_node('move_to_start')
 
