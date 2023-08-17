@@ -32,7 +32,7 @@ rosdep install --from-paths src --ignore-src --rosdistro noetic -y --skip-keys l
 ```
 ## 6. run this package
 ```
-sudo lsof -t -i:8080 | xargs -r -I{} sudo kill -9 {}&&roslaunch franka_gazebo panda.launch x:=0  world:=$(rospack find franka_gazebo)/world/stone.sdf controller:=cartesian_impedance_example_controller  rviz:=true use_gripper:=true 
+sudo lsof -t -i:8080 | xargs -r -I{} sudo kill -9 {}&&roslaunch franka_gazebo panda.launch z:=0.25  world:=$(rospack find franka_gazebo)/world/stone.sdf controller:=cartesian_impedance_example_controller  rviz:=true use_gripper:=true 
 ```
 ## 7. run the python file
 Run the controller to operate the robotic arm
