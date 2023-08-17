@@ -62,6 +62,10 @@ def setpose(pose):
         marker_pose.pose.orientation.y = pose[4]
         marker_pose.pose.orientation.z = pose[5]
         marker_pose.pose.orientation.w = pose[6]
+def round4(numlist):
+    for i in range(len(numlist)):
+        numlist[i]=round(numlist[i],4)
+    return numlist
 def handle_client(client_socket):
     global  nowpose
     while True:
@@ -112,11 +116,12 @@ def handle_client(client_socket):
             if msg=='MoveToStart':
                 nowpose=startpose
         setpose(nowpose)
+        print(round4(nowpose))
         
     client_socket.close()
 def tcp_server(port):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('192.168.204.129', port))
+    server_socket.bind(('192.168.31.150', port))
     server_socket.listen(5)
     rospy.loginfo(f"Server listening on port {port}")
     while True:
