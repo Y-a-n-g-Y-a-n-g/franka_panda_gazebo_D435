@@ -28,7 +28,7 @@ git clone https://github.com/Yang-GG/franka_panda_gazebo_D435.git
 ```
 ## 5.compile this package
 ```
-rosdep install --from-paths src --ignore-src --rosdistro noetic -y --skip-keys libfranka&&catkin_make -DCMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/Desktop/libfranka/build
+rosdep install --from-paths src --ignore-src --rosdistro noetic -y --skip-keys libfranka&&catkin_make -DCMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/Desktop/libfranka/build && echo "source ~/Desktop/catkin_ws/devel/setup.sh">>~/.bashrc&&source ~/.bashrc
 ```
 ## 6. run this package
 ```
