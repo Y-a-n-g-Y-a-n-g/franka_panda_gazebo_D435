@@ -20,7 +20,7 @@ mkdir build && cd build&&cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF .. &
 ```
 ## 3. create catkin workspace
 ```
-mkdir -p catkin_ws/src&&cd catkin_ws&&source /opt/ros/noetic/setup.sh&&catkin_init_workspace src
+cd ../.. && mkdir -p catkin_ws/src&&cd catkin_ws&&source /opt/ros/noetic/setup.sh&&catkin_init_workspace src
 ```
 ## 4. Clone this repository
 ```
