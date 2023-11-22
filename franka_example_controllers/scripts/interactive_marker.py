@@ -114,14 +114,15 @@ def handle_client(client_socket):
                 nowpose[3:7]=rotate_quaternion(nowpose[3:7],[0,0,1],-stepangle)
             #MoveToStart
             if msg=='MoveToStart':
-                nowpose=startpose
+                nowpose=startpose.copy()
         setpose(nowpose)
+        print(nowpose)
         print(round4(nowpose))
         
     client_socket.close()
 def tcp_server(port):
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('192.168.31.150', port))
+    server_socket.bind(('localhost', port))
     server_socket.listen(5)
     rospy.loginfo(f"Server listening on port {port}")
     while True:
