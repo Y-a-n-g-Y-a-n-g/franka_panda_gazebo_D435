@@ -14,7 +14,7 @@ position_limits = [[-0.6, 0.6], [-0.6, 0.6], [0.05, 0.9]]
 SafeWorkspace=[[-0.2, 0.7], [-0.6, 0.6], [0.05, 0.7]]
 startpose=[0.3,0,0.5,1,0,0,0]
 nowpose=None
-stepxyz=0.01
+stepxyz=0.005
 stepangle=1
 def rotate_quaternion(quaternion, axis, angle):
     # 将旋转轴向量标准化
@@ -64,7 +64,7 @@ def setpose(pose):
         marker_pose.pose.orientation.w = pose[6]
 def round4(numlist):
     for i in range(len(numlist)):
-        numlist[i]=round(numlist[i],4)
+        numlist[i]=round(numlist[i],5)
     return numlist
 def handle_client(client_socket):
     global  nowpose
@@ -79,24 +79,24 @@ def handle_client(client_socket):
             #x
             if msg=='TraX+':
                 nowpose[0] =nowpose[0]+stepxyz if nowpose[0]+stepxyz<SafeWorkspace[0][1] else SafeWorkspace[0][1]
-                nowpose[0]=round(nowpose[0],2)
+                nowpose[0]=round(nowpose[0],5)
             if msg=='TraX-':
                 nowpose[0] =nowpose[0]-stepxyz if nowpose[0]-stepxyz >SafeWorkspace[0][0] else SafeWorkspace[0][0]
-                nowpose[0]=round(nowpose[0],2)
+                nowpose[0]=round(nowpose[0],5)
             #y
             if msg=='TraY+':
                 nowpose[1]=nowpose[1]+stepxyz if nowpose[1]+stepxyz<SafeWorkspace[1][1] else SafeWorkspace[1][1]
-                nowpose[1]=round(nowpose[1],2)
+                nowpose[1]=round(nowpose[1],5)
             if msg=='TraY-':
                 nowpose[1]=nowpose[1]-stepxyz if nowpose[1]-stepxyz>SafeWorkspace[1][0] else SafeWorkspace[1][0]
-                nowpose[1]=round(nowpose[1],2)
+                nowpose[1]=round(nowpose[1],5)
             #z
             if msg=='TraZ+':
                 nowpose[2]=nowpose[2]+stepxyz if nowpose[2]+stepxyz<SafeWorkspace[2][1] else SafeWorkspace[2][1]
-                nowpose[2]=round(nowpose[2],2)
+                nowpose[2]=round(nowpose[2],5)
             if msg=='TraZ-':
                 nowpose[2]=nowpose[2]-stepxyz if nowpose[2]-stepxyz>SafeWorkspace[2][0] else SafeWorkspace[2][0]
-                nowpose[2]=round(nowpose[2],2)
+                nowpose[2]=round(nowpose[2],5)
             #rotatex
             if msg=='RotX+':
                 nowpose[3:7]=rotate_quaternion(nowpose[3:7],[1,0,0],stepangle)
